@@ -31,7 +31,7 @@ jobs:
       - name: Upload static artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: AIResume
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
