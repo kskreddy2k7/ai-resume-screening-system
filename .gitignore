@@ -1,45 +1,18 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-.Python
-venv/
-env/
-.venv/
-*.egg-info/
-dist/
-build/
-.eggs/
-
-# Flask
-instance/
-.webassets-cache
-
-# Uploads (user data)
-uploads/*
-!uploads/.gitkeep
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# Environment
-.env
-.env.*
-*.env
-
-# IDE
+## IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+## Build output
+dist/
+build/
+
+## Environment files
+.env
+.env.*
+*.env
+
+## OS
 .DS_Store
 Thumbs.db
-
-# NLTK data
-nltk_data/

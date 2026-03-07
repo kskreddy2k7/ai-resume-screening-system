@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="AIResume workspace mock screenshot">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#121c33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="90" y="90" width="1100" height="540" rx="18" fill="#101827" stroke="#24324d"/>
+  <text x="130" y="150" fill="#e5edff" font-size="34" font-family="Arial, sans-serif">AI Resume Screening Workspace</text>
+  <rect x="130" y="190" width="500" height="350" rx="14" fill="#0d1627" stroke="#2a3d61"/>
+  <rect x="655" y="190" width="495" height="350" rx="14" fill="#0d1627" stroke="#2a3d61"/>
+  <text x="160" y="240" fill="#8db2ff" font-size="22" font-family="Arial, sans-serif">Drag &amp; Drop Upload</text>
+  <text x="685" y="240" fill="#8db2ff" font-size="22" font-family="Arial, sans-serif">Job Description</text>
+  <rect x="130" y="565" width="200" height="44" rx="10" fill="#3dd9b6"/>
+  <text x="158" y="593" fill="#092032" font-size="19" font-family="Arial, sans-serif">Analyze Candidates</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="AIResume ranking mock screenshot">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f19"/>
+      <stop offset="100%" stop-color="#13283e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg2)"/>
+  <rect x="90" y="80" width="1100" height="560" rx="18" fill="#101827" stroke="#223650"/>
+  <text x="130" y="140" fill="#f3f7ff" font-size="34" font-family="Arial, sans-serif">Candidate Rankings</text>
+
+  <g transform="translate(130, 190)">
+    <rect width="1020" height="110" rx="12" fill="#0d1626" stroke="#2a3e5f"/>
+    <text x="24" y="42" fill="#e0ebff" font-size="24" font-family="Arial, sans-serif">#1 Alex Johnson</text>
+    <rect x="880" y="24" width="108" height="36" rx="18" fill="#103a33" stroke="#2fc8a3"/>
+    <text x="908" y="48" fill="#73e4c8" font-size="20" font-family="Arial, sans-serif">92%</text>
+    <rect x="24" y="72" width="970" height="16" rx="8" fill="#203246"/>
+    <rect x="24" y="72" width="892" height="16" rx="8" fill="#35d6b4"/>
+  </g>
+
+  <g transform="translate(130, 325)">
+    <rect width="1020" height="110" rx="12" fill="#0d1626" stroke="#2a3e5f"/>
+    <text x="24" y="42" fill="#e0ebff" font-size="24" font-family="Arial, sans-serif">#2 Priya Verma</text>
+    <rect x="880" y="24" width="108" height="36" rx="18" fill="#102e40" stroke="#34a6ff"/>
+    <text x="908" y="48" fill="#78c7ff" font-size="20" font-family="Arial, sans-serif">81%</text>
+    <rect x="24" y="72" width="970" height="16" rx="8" fill="#203246"/>
+    <rect x="24" y="72" width="785" height="16" rx="8" fill="#2ea7ff"/>
+  </g>
+
+  <g transform="translate(130, 460)">
+    <rect width="1020" height="110" rx="12" fill="#0d1626" stroke="#2a3e5f"/>
+    <text x="24" y="42" fill="#e0ebff" font-size="24" font-family="Arial, sans-serif">#3 Liam Carter</text>
+    <rect x="880" y="24" width="108" height="36" rx="18" fill="#3d2811" stroke="#f1aa53"/>
+    <text x="908" y="48" fill="#f7bf76" font-size="20" font-family="Arial, sans-serif">63%</text>
+    <rect x="24" y="72" width="970" height="16" rx="8" fill="#203246"/>
+    <rect x="24" y="72" width="611" height="16" rx="8" fill="#f6b454"/>
+  </g>
+</svg>

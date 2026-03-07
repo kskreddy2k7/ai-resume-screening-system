@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI Resume Screening demo built as a static web app for GitHub Pages.">
+  <title>AIResume | Static Resume Screening Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-a" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-b" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="hero fade-up">
+      <p class="eyebrow">AI Resume Screening</p>
+      <h1>Rank candidates in seconds with a static AI-style demo.</h1>
+      <p class="hero-sub">
+        Upload resumes, paste a job description, and generate an instant ranking report with simulated matching scores.
+      </p>
+    </header>
+
+    <section class="panel fade-up delay-1" aria-label="Screening Input Form">
+      <div class="panel-header">
+        <h2>Screening Workspace</h2>
+        <span class="status-pill">Client-Side Simulation</span>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label class="label" for="resumeInput">Resume Uploads</label>
+          <div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="Upload resumes">
+            <input id="resumeInput" type="file" accept=".pdf,.doc,.docx,.txt" multiple hidden>
+            <div class="drop-content">
+              <p class="drop-title">Drag and drop resume files</p>
+              <p class="drop-sub">or click to browse (.pdf, .doc, .docx, .txt)</p>
+            </div>
+          </div>
+          <ul id="fileList" class="file-list" aria-live="polite"></ul>
+        </div>
+
+        <div>
+          <label class="label" for="jobDescription">Job Description</label>
+          <textarea id="jobDescription" rows="11" placeholder="Paste role requirements, skills, and responsibilities..."></textarea>
+          <p class="help-text">Tip: Include technologies like JavaScript, Python, React, SQL, AWS, or Docker for more realistic scoring.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="analyzeBtn" class="btn btn-primary">Analyze Candidates</button>
+        <button id="clearBtn" class="btn btn-ghost">Clear</button>
+      </div>
+    </section>
+
+    <section class="panel fade-up delay-2" aria-label="Candidate Rankings">
+      <div class="panel-header">
+        <h2>Candidate Rankings</h2>
+        <span id="resultMeta" class="mono subtle">No results yet</span>
+      </div>
+
+      <div id="emptyState" class="empty-state">
+        <p>Upload resumes and add a job description to generate ranked candidates.</p>
+      </div>
+
+      <div id="results" class="results" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <noscript>
+    <div class="noscript">JavaScript is required to run this demo.</div>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
