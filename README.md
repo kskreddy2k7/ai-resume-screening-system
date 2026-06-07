@@ -1,69 +1,77 @@
-# AI Resume Screening System
+# TalentFlow AI 2.0 🧠💼
 
-[![Static App](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JS-1f2937?style=for-the-badge)](index.html)
-[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white)](https://pages.github.com/)
-[![Vanilla JS](https://img.shields.io/badge/Runtime-Browser%20Only-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)](script.js)
+> **Build, Analyze, Optimize, and Get Hired.**
 
-Portfolio-ready resume screening project with a modern static demo built for GitHub Pages. No backend or build step required — open directly in a browser.
+TalentFlow AI is a production-ready, full-stack AI SaaS platform designed for candidates and recruiters. It replaces basic keyword matching with state-of-the-art semantic AI, powerful PDF parsing, and a stunning modern user interface.
 
-## Live Demo
+## 🌟 Key Features
 
-**https://kskreddy2k7.github.io/ai-resume-screening-system/**
+1. **AI Resume Builder**: 8-step wizard to craft professional resumes.
+2. **True Semantic AI Matching**: Powered by `sentence-transformers` (`all-MiniLM-L6-v2`) and `spaCy` running on a Python backend.
+3. **Advanced PDF Parsing**: Utilizes `PyMuPDF` for highly accurate, layout-aware text extraction.
+4. **Authentication**: Secure JWT-based Auth system with MongoDB.
+5. **Dashboard Analytics**: Track resume performance and job matching trends using `Recharts`.
+6. **Premium UI/UX**: Built with React, Tailwind CSS, Shadcn UI, and Framer Motion for a tier-1 SaaS aesthetic.
+7. **Document Export**: Dynamically generate ATS-friendly PDFs using `fpdf2`.
 
-> Replace `kskreddy2k7` with your GitHub username if you fork this repository.
+---
 
-## Features
+## 🏗️ Architecture Stack
 
-- Drag-and-drop resume uploads (`.pdf`, `.doc`, `.docx`, `.txt`)
-- Job description input area
-- JavaScript-based keyword-matching scoring (no backend required)
-- Animated progress bars and rank labels
-- Ranked candidate list with matched / missing skill tags
-- Professional dark AI-style interface with responsive layout
+- **Frontend**: Vite + React + TypeScript + Zustand + Tailwind CSS + Framer Motion
+- **Backend**: Python 3 + FastAPI + Motor (Async MongoDB)
+- **Database**: MongoDB
+- **AI/ML**: `sentence-transformers`, `torch`, `spacy` (`en_core_web_sm`)
+- **Document Processing**: `PyMuPDF` (Ingestion), `fpdf2` (Export)
 
-## Screenshots
+---
 
-![Workspace](assets/screenshot-home.svg)
+## 🚀 Getting Started
 
-![Rankings](assets/screenshot-results.svg)
+### Prerequisites
+- Node.js (v18+)
+- Python (3.9+)
+- MongoDB running locally on port `27017` (or modify `MONGODB_URL` in `.env`)
 
-## Repository Structure
+### 1. Start the Backend (FastAPI)
 
-```text
-ai-resume-screening-system/
-├── index.html                   # Main page (served as GitHub Pages root)
-├── style.css                    # Dark-theme stylesheet
-├── script.js                    # Scoring simulation (pure JavaScript)
-├── assets/                      # Screenshots and static assets
-│   ├── screenshot-home.svg
-│   └── screenshot-results.svg
-├── .github/workflows/deploy.yml # GitHub Pages deployment workflow
-├── README.md
-└── .gitignore
-```
-
-## GitHub Pages Setup
-
-Deployment is automated via GitHub Actions. Follow these steps once:
-
-1. Open your repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Source**, select **GitHub Actions**.
-4. Push to the `main` branch (or click **Run workflow** manually in the **Actions** tab).
-5. Wait for the **Deploy AIResume to GitHub Pages** workflow to complete (≈ 30 s).
-6. Your site is live at `https://<username>.github.io/<repository-name>/`.
-
-## Quick Local Preview
+Open a terminal and navigate to the project root:
 
 ```bash
-git clone https://github.com/kskreddy2k7/ai-resume-screening-system.git
-cd ai-resume-screening-system
-python -m http.server 8080
+cd backend
+python -m venv venv
+
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+# source venv/bin/activate
+
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+
+# Start the server
+python run.py
 ```
+*The backend will run on `http://localhost:8000`*
 
-Open `http://localhost:8080`.
+### 2. Start the Frontend (Vite)
 
-## Technologies
+Open a new terminal and navigate to the project root:
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Deployment**: GitHub Actions, GitHub Pages
+```bash
+npm install
+npm run dev
+```
+*The frontend will run on `http://localhost:5173`*
+
+---
+
+## 📸 Workflows
+
+1. **Sign Up / Login**: Create an account to access the platform.
+2. **Build a Resume**: Navigate to the Resume Builder to generate a structured resume profile saved directly to the database.
+3. **Export to PDF**: From the Dashboard, click the download icon to instantly generate a professional PDF.
+4. **Screening Workspace**: Upload an external PDF resume and paste a Job Description. The FastAPI server will parse the PDF, run NLP entity extraction, and calculate the semantic Cosine Similarity.
+
+---
+*Built as a world-class startup product.*

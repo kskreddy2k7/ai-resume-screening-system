@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+motor
+pymongo
+passlib[bcrypt]
+python-jose
+sentence-transformers
+torch
+spacy
+pymupdf
+python-docx
+fpdf2
+python-multipart
