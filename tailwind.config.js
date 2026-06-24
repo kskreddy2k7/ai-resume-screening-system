@@ -2,9 +2,7 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
+    './index.html',
     './src/**/*.{ts,tsx}',
   ],
   theme: {
@@ -16,6 +14,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        display: ["Outfit", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +58,15 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+        '160': '40rem',
+      },
+      fontSize: {
+        '10xl': '10rem',
+        '11xl': '12rem',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -65,12 +76,26 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { opacity: 1, filter: 'brightness(1)' },
+          '50%': { opacity: .8, filter: 'brightness(1.5)' },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-glow": "pulseGlow 4s ease-in-out infinite",
       },
+      backgroundImage: {
+        'noise': "url('/noise.png')",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 }
