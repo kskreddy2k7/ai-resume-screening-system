@@ -46,7 +46,7 @@ const withSnapshot = (state: PlatformState): Pick<PlatformState, 'history' | 'fu
 
 export const usePlatformStore = create<PlatformState>()(
   persist(
-    (set, get) => {
+    (set) => {
       const starter = createStarterResume()
 
       return {
