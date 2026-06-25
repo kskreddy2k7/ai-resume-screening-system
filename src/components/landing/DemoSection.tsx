@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { UploadCloud, CheckCircle2, AlertCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Play } from 'lucide-react';
 
 export default function DemoSection() {
   return (
@@ -8,24 +8,27 @@ export default function DemoSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Interactive Intelligence</h2>
           <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-            Drag in your existing resume and watch the engine dissect it line by line.
+            Watch the engine dissect a resume line by line — in real time.
           </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 items-center bg-background p-8 rounded-3xl border border-border/50 shadow-2xl">
-          {/* Mock Drag & Drop Zone */}
-          <div className="w-full lg:w-1/2 h-96 border-2 border-dashed border-border/50 rounded-2xl flex flex-col items-center justify-center bg-card relative group cursor-pointer hover:border-primary/50 transition-colors">
-            <UploadCloud className="w-12 h-12 text-muted-foreground mb-4 group-hover:text-primary transition-colors" />
-            <p className="text-lg font-medium">Drop your PDF here</p>
-            <p className="text-sm text-muted-foreground mt-2">or click to browse</p>
-            
-            {/* Mock scanning animation overlay */}
-            <motion.div 
-              initial={{ top: 0, opacity: 0 }}
-              animate={{ top: "100%", opacity: [0, 1, 1, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
-              className="absolute left-0 right-0 h-1 bg-primary/50 shadow-[0_0_20px_rgba(255,255,255,0.5)] z-10"
+          {/* Demo Video */}
+          <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden border border-border/50 bg-black shadow-lg relative group">
+            <video
+              src="/demo.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto object-cover rounded-2xl"
             />
+            {/* Play icon overlay on hover */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 rounded-2xl">
+              <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
+                <Play className="w-7 h-7 text-white fill-white ml-1" />
+              </div>
+            </div>
           </div>
 
           {/* Mock Real-time Analysis */}
