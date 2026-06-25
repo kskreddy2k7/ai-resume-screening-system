@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useResumeStore } from '../../store/resumeStore';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
-import { GripVertical, Plus, Trash2, ChevronDown, ChevronRight, Sparkles } from 'lucide-react';
+import { GripVertical, Plus, Trash2, ChevronDown, ChevronRight, Sparkles, LayoutTemplate, Palette } from 'lucide-react';
 import { v4 as uuidv4 } from 'uuid';
 
 const sectionLabels: Record<string, string> = {
@@ -363,13 +363,57 @@ export default function SidebarEditor() {
     }
   };
 
+  const templateId = useResumeStore(state => state.templateId);
+  const setTemplateId = useResumeStore(state => state.setTemplateId);
+  const activeColor = useResumeStore((state: any) => state.data.layout?.primaryColor || '#0a0a0a');
+
   return (
-    <div className="w-80 flex flex-col border-r border-border/50 bg-[#060606] overflow-hidden shrink-0">
+    <div className="w-full lg:w-80 flex flex-col border-r border-border/50 bg-[#060606] overflow-hidden shrink-0">
       <div className="h-14 flex items-center px-6 border-b border-border/30 font-display font-bold tracking-tight text-white/90 text-sm gap-2">
         <Sparkles className="w-4 h-4 text-primary" /> Resume Editor
       </div>
       
       <div className="flex-1 overflow-y-auto p-4 custom-scrollbar space-y-3">
+        {/* Template & Color Selector Card */}
+        <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3.5 space-y-3">
+          <span className="text-[10px] font-bold tracking-wide uppercase text-white/50 block">Design & Layout</span>
+          
+          <div className="grid grid-cols-2 gap-2">
+            {/* Template Selector */}
+            <div className="relative">
+              <select
+                value={templateId}
+                onChange={(e) => setTemplateId(e.target.value)}
+                className="w-full appearance-none bg-[#141414] border border-[#222] text-xs text-white/90 rounded-lg pl-8 pr-6 py-2 focus:outline-none focus:border-primary/50 cursor-pointer hover:bg-white/[0.02]"
+              >
+                <option value="professional">Corporate</option>
+                <option value="modern">Modern Tech</option>
+                <option value="executive">Executive</option>
+                <option value="minimal">Clean Min</option>
+              </select>
+              <LayoutTemplate className="w-3.5 h-3.5 text-muted-foreground absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <ChevronDown className="w-3.5 h-3.5 text-muted-foreground absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            </div>
+
+            {/* Color Swatch Selector */}
+            <div className="relative flex items-center bg-[#141414] border border-[#222] rounded-lg px-2.5 py-2 hover:bg-white/[0.02] cursor-pointer">
+              <Palette className="w-3.5 h-3.5 text-muted-foreground mr-1.5 shrink-0" />
+              <span className="text-[10px] text-white/85 font-medium mr-1.5 truncate">Theme Color</span>
+              <div
+                className="w-4 h-4 rounded-full border border-white/10 relative overflow-hidden shrink-0 shadow-sm ml-auto"
+                style={{ backgroundColor: activeColor }}
+              >
+                <input
+                  type="color"
+                  value={activeColor}
+                  onChange={(e) => updateData((d: any) => { if (!d.layout) d.layout = {}; d.layout.primaryColor = e.target.value; })}
+                  className="absolute inset-0 opacity-0 cursor-pointer scale-150"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="sections">
             {(provided) => (

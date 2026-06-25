@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function EditorPreviewSection() {
   return (
-    <section className="py-32 relative bg-background border-t border-border/50">
+    <section className="py-32 relative bg-transparent">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Canva-Style Freedom</h2>
@@ -13,7 +13,7 @@ export default function EditorPreviewSection() {
         </div>
 
         {/* Mock Editor Canvas UI */}
-        <div className="w-full h-[600px] bg-card rounded-3xl border border-border/50 shadow-2xl flex overflow-hidden">
+        <div className="w-full h-[600px] bg-[#0a0a0a]/60 backdrop-blur-xl rounded-3xl border border-white/5 shadow-2xl flex overflow-hidden">
           {/* Mock Toolbar */}
           <div className="w-16 border-r border-border/50 bg-secondary/20 flex flex-col items-center py-4 gap-6">
             <LayoutTemplate className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />

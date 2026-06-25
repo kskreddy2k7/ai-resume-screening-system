@@ -11,7 +11,7 @@ export default function StorySection() {
   const x = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
   
   return (
-    <section id="philosophy" ref={sectionRef} className="py-32 relative bg-background border-t border-border/50">
+    <section id="philosophy" ref={sectionRef} className="py-32 relative bg-transparent">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1 space-y-8">

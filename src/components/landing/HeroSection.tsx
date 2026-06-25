@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { X, Play } from 'lucide-react';
-import ShowcaseAnimation from './ShowcaseAnimation';
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,12 +16,9 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-[#060606] select-none">
-      {/* Animated Showcase Scene (occupies background / z-0) */}
-      <ShowcaseAnimation />
-
+    <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-transparent select-none">
       {/* Subtle radial gradient mask behind text (z-5) to maintain perfect text readability */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,6,6,0.85)_0%,rgba(6,6,6,0.45)_50%,rgba(6,6,6,0.85)_100%)] z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,6,6,0.75)_0%,rgba(6,6,6,0.35)_50%,rgba(6,6,6,0.75)_100%)] z-10 pointer-events-none" />
 
       {/* Foreground Hero Content (z-20) */}
       <motion.div
