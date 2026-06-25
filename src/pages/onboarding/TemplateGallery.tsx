@@ -119,15 +119,15 @@ export default function TemplateGallery() {
           </p>
         </header>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex gap-8">
           {/* Sidebar */}
-          <div className="w-full lg:w-64 shrink-0">
-            <h3 className="font-semibold text-lg mb-4 text-white hidden lg:block">Categories</h3>
-            <div className="flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 custom-scrollbar whitespace-nowrap">
+          <div className="w-64 shrink-0">
+            <h3 className="font-semibold text-lg mb-4 text-white">Categories</h3>
+            <div className="space-y-1">
               {CATEGORIES.map(category => (
                 <button
                   key={category}
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-white transition-colors bg-white/[0.02] border border-white/5 lg:bg-transparent lg:border-none inline-block lg:w-full lg:text-left"
+                  className="w-full text-left px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-white transition-colors"
                 >
                   {category}
                 </button>

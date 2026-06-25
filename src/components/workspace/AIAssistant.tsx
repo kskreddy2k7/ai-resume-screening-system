@@ -61,7 +61,7 @@ export default function AIAssistant() {
   };
 
   return (
-    <aside className="w-full lg:w-80 flex flex-col border-l border-border/50 bg-[#060606] relative shrink-0 overflow-hidden">
+    <aside className="w-80 flex flex-col border-l border-border/50 bg-[#060606] relative shrink-0 overflow-hidden">
       {/* Header */}
       <div className="h-14 border-b border-border/30 flex items-center px-6 gap-2 text-white/90 font-display font-bold text-sm tracking-tight shrink-0 select-none">
         <Sparkles className="w-4 h-4 text-primary" /> Intelligence Engine

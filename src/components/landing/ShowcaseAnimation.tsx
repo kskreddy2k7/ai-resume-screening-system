@@ -1,31 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, FileText, CheckCircle2, ShieldAlert, Cpu, Award, Zap, Code, ChevronRight } from 'lucide-react';
 
 export default function ShowcaseAnimation() {
   const [scene, setScene] = useState(1);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll();
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Map scroll progress (0 to 1) to scenes (1 to 7)
-    if (latest < 0.15) {
-      setScene(1);
-    } else if (latest < 0.30) {
-      setScene(2);
-    } else if (latest < 0.45) {
-      setScene(3);
-    } else if (latest < 0.60) {
-      setScene(4);
-    } else if (latest < 0.75) {
-      setScene(5);
-    } else if (latest < 0.90) {
-      setScene(6);
-    } else {
-      setScene(7);
-    }
-  });
+  // Auto-cycle through scenes in a loop
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setScene(prev => (prev === 7 ? 1 : prev + 1));
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   // Handle mouse movement for 3D parallax effect
   useEffect(() => {
@@ -562,12 +550,13 @@ export default function ShowcaseAnimation() {
       {/* Visual Timeline Indicators at the bottom */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
         {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-          <div 
+          <button 
             key={num}
-            className={`w-2 h-2 rounded-full transition-all ${
+            onClick={() => setScene(num)}
+            className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
               scene === num 
                 ? 'bg-white scale-125 shadow-[0_0_8px_#ffffff]' 
-                : 'bg-white/20'
+                : 'bg-white/20 hover:bg-white/40'
             }`}
             title={`Scene ${num}`}
           />

@@ -8,7 +8,6 @@ import HeroSection from '../components/landing/HeroSection';
 import StorySection from '../components/landing/StorySection';
 import DemoSection from '../components/landing/DemoSection';
 import EditorPreviewSection from '../components/landing/EditorPreviewSection';
-import ShowcaseAnimation from '../components/landing/ShowcaseAnimation';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,21 +37,16 @@ export default function LandingPage() {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="bg-background text-foreground min-h-screen relative overflow-hidden bg-noise"
     >
-      {/* Cinematic 3D Background Showcase */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <ShowcaseAnimation />
-      </div>
-
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 mix-blend-difference text-white select-none">
-        <div className="font-display font-bold text-lg sm:text-2xl tracking-tighter cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 mix-blend-difference text-white select-none">
+        <div className="font-display font-bold text-2xl tracking-tighter cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           TALENTFLOW <span className="opacity-50">X</span>
         </div>
-        <div className="flex gap-4 sm:gap-8 items-center text-xs sm:text-sm font-medium tracking-wide">
-          <button onClick={() => scrollToSection('philosophy')} className="hidden md:block hover:opacity-70 transition-opacity cursor-pointer">Philosophy</button>
-          <button onClick={() => scrollToSection('features')} className="hidden md:block hover:opacity-70 transition-opacity cursor-pointer">Features</button>
+        <div className="flex gap-8 items-center text-sm font-medium tracking-wide">
+          <button onClick={() => scrollToSection('philosophy')} className="hover:opacity-70 transition-opacity cursor-pointer">Philosophy</button>
+          <button onClick={() => scrollToSection('features')} className="hover:opacity-70 transition-opacity cursor-pointer">Features</button>
           <button 
             onClick={() => navigate('/templates')}
-            className="bg-white text-black px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-semibold hover:scale-105 transition-transform cursor-pointer"
+            className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform cursor-pointer"
           >
             Enter Workspace
           </button>
@@ -60,12 +54,10 @@ export default function LandingPage() {
       </nav>
 
       {/* Landing Page Content */}
-      <div className="relative z-10">
-        <HeroSection />
-        <StorySection />
-        <DemoSection />
-        <EditorPreviewSection />
-      </div>
+      <HeroSection />
+      <StorySection />
+      <DemoSection />
+      <EditorPreviewSection />
     </motion.div>
   );
 }

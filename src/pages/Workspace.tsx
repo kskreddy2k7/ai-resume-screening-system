@@ -5,7 +5,7 @@ import A4Canvas from '../components/editor/A4Canvas';
 import { useResumeStore } from '../store/resumeStore';
 import { exportResumeToPdf } from '../lib/export';
 import { Undo, Redo, Download, UploadCloud, LayoutTemplate, Palette, ChevronDown } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { extractTextFromFile } from '../lib/extractor';
 import { parseResumeText } from '../lib/ai';
 
@@ -19,7 +19,6 @@ export default function Workspace() {
   const setTemplateId = useResumeStore(state => state.setTemplateId);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [activeMobileTab, setActiveMobileTab] = useState<'edit' | 'preview' | 'ai'>('preview');
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -157,50 +156,13 @@ export default function Workspace() {
       {/* Main Workspace Area */}
       <div className="flex-1 flex overflow-hidden">
         {/* Left Panel: Form Editor */}
-        <div className={`${activeMobileTab === 'edit' ? 'flex flex-1 w-full' : 'hidden'} lg:flex lg:w-80 lg:shrink-0`}>
-          <SidebarEditor />
-        </div>
+        <SidebarEditor />
 
         {/* Center Panel: Live Preview */}
-        <div className={`${activeMobileTab === 'preview' ? 'flex flex-1 w-full' : 'hidden'} lg:flex lg:flex-1`}>
-          <A4Canvas />
-        </div>
+        <A4Canvas />
 
         {/* Right Panel: Intelligence */}
-        <div className={`${activeMobileTab === 'ai' ? 'flex flex-1 w-full' : 'hidden'} lg:flex lg:w-80 lg:shrink-0`}>
-          <AIAssistant />
-        </div>
-      </div>
-
-      {/* Mobile Tab Selector (Visible on viewport < lg) */}
-      <div className="lg:hidden h-16 bg-[#0a0a0a] border-t border-white/5 flex items-center justify-around shrink-0 z-20">
-        <button
-          onClick={() => setActiveMobileTab('edit')}
-          className={`flex flex-col items-center justify-center w-20 h-full text-[10px] font-bold uppercase tracking-wider transition-colors ${
-            activeMobileTab === 'edit' ? 'text-white' : 'text-muted-foreground/60'
-          }`}
-        >
-          <span className="text-base mb-1">✍️</span>
-          <span>Edit</span>
-        </button>
-        <button
-          onClick={() => setActiveMobileTab('preview')}
-          className={`flex flex-col items-center justify-center w-20 h-full text-[10px] font-bold uppercase tracking-wider transition-colors ${
-            activeMobileTab === 'preview' ? 'text-white' : 'text-muted-foreground/60'
-          }`}
-        >
-          <span className="text-base mb-1">📄</span>
-          <span>Preview</span>
-        </button>
-        <button
-          onClick={() => setActiveMobileTab('ai')}
-          className={`flex flex-col items-center justify-center w-20 h-full text-[10px] font-bold uppercase tracking-wider transition-colors ${
-            activeMobileTab === 'ai' ? 'text-white' : 'text-muted-foreground/60'
-          }`}
-        >
-          <span className="text-base mb-1">✨</span>
-          <span>AI Scan</span>
-        </button>
+        <AIAssistant />
       </div>
     </motion.div>
   );

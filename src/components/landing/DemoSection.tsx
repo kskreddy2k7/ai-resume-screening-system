@@ -3,7 +3,7 @@ import { CheckCircle2, AlertCircle, Play } from 'lucide-react';
 
 export default function DemoSection() {
   return (
-    <section id="features" className="py-32 relative bg-transparent overflow-hidden">
+    <section id="features" className="py-32 relative bg-secondary/30 border-t border-border/50 overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Interactive Intelligence</h2>
@@ -12,7 +12,7 @@ export default function DemoSection() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-center bg-[#0a0a0a]/60 backdrop-blur-xl p-8 rounded-3xl border border-white/5 shadow-2xl">
+        <div className="flex flex-col lg:flex-row gap-8 items-center bg-background p-8 rounded-3xl border border-border/50 shadow-2xl">
           {/* Demo Video */}
           <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden border border-border/50 bg-black shadow-lg relative group">
             <video

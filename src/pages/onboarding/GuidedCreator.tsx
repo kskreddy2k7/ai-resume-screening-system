@@ -38,26 +38,26 @@ export default function GuidedCreator() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="h-16 border-b border-border/50 flex items-center justify-between px-4 sm:px-8 bg-card">
-        <button onClick={prevStep} className="flex items-center text-muted-foreground hover:text-foreground text-xs sm:text-sm font-medium transition-colors shrink-0">
-          <ArrowLeft className="w-4 h-4 mr-1 sm:mr-2" /> Back
+      <header className="h-16 border-b border-border/50 flex items-center justify-between px-8 bg-card">
+        <button onClick={prevStep} className="flex items-center text-muted-foreground hover:text-foreground font-medium transition-colors">
+          <ArrowLeft className="w-4 h-4 mr-2" /> Back
         </button>
-        <div className="flex gap-1 sm:gap-2 items-center">
+        <div className="flex gap-2 items-center">
           {STEPS.map((step, idx) => (
             <div key={step.id} className="flex items-center">
-              <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold transition-colors ${idx === currentStepIndex ? 'bg-primary text-primary-foreground' :
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${idx === currentStepIndex ? 'bg-primary text-primary-foreground' :
                   idx < currentStepIndex ? 'bg-primary/20 text-primary' : 'bg-secondary text-muted-foreground'
                 }`}>
-                {idx < currentStepIndex ? <Check className="w-3.5 h-3.5" /> : idx + 1}
+                {idx < currentStepIndex ? <Check className="w-4 h-4" /> : idx + 1}
               </div>
               {idx < STEPS.length - 1 && (
-                <div className={`w-4 sm:w-12 h-0.5 sm:h-1 ${idx < currentStepIndex ? 'bg-primary/50' : 'bg-secondary'}`} />
+                <div className={`w-12 h-1 ${idx < currentStepIndex ? 'bg-primary/50' : 'bg-secondary'}`} />
               )}
             </div>
           ))}
         </div>
-        <button onClick={() => navigate('/app')} className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors shrink-0">
-          Skip <span className="hidden sm:inline">to Editor</span>
+        <button onClick={() => navigate('/app')} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          Skip to Editor
         </button>
       </header>
 
