@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,6,6,0.85)_0%,rgba(6,6,6,0.45)_50%,rgba(6,6,6,0.85)_100%)] z-10 pointer-events-none" />
 
       {/* Foreground Hero Content (z-20) */}
-      <motion.div 
+      <motion.div
         style={{ y, opacity }}
         className="relative z-20 flex flex-col items-center justify-center text-center px-4 max-w-4xl"
       >
@@ -42,7 +42,7 @@ export default function HeroSection() {
           </h1>
         </motion.div>
 
-        <motion.p 
+        <motion.p
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
@@ -51,20 +51,20 @@ export default function HeroSection() {
           Not just a resume builder. An intelligent workspace that scans, optimizes, and matches your professional identity for elite tech roles.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
           className="mt-12 flex flex-wrap gap-4 justify-center"
         >
-          <button 
+          <button
             onClick={() => navigate('/templates')}
             className="px-8 py-4 bg-white text-black hover:bg-white/95 rounded-full font-bold text-sm transition-all shadow-lg shadow-white/5 cursor-pointer"
           >
             Start Building Free
           </button>
-          
-          <button 
+
+          <button
             onClick={() => setIsVideoOpen(true)}
             className="px-8 py-4 border border-white/10 hover:border-white/20 text-white rounded-full font-bold text-sm bg-white/[0.02] hover:bg-white/[0.04] transition-all cursor-pointer flex items-center gap-2"
           >
@@ -76,14 +76,14 @@ export default function HeroSection() {
       {/* Video Modal Overlay */}
       <AnimatePresence>
         {isVideoOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-lg"
             onClick={() => setIsVideoOpen(false)}
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ export default function HeroSection() {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
-              <button 
+              <button
                 onClick={() => setIsVideoOpen(false)}
                 className="absolute top-4 right-4 z-50 p-2 bg-black/50 hover:bg-black/80 border border-white/10 text-white/80 hover:text-white rounded-xl transition-all cursor-pointer"
               >
@@ -100,7 +100,7 @@ export default function HeroSection() {
               </button>
 
               {/* HTML5 Video Player */}
-              <video 
+              <video
                 src="/demo.mp4"
                 className="w-full h-full object-cover"
                 controls

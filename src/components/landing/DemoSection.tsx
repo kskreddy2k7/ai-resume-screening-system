@@ -52,7 +52,7 @@ export default function DemoSection() {
                 { label: 'Missing key metrics in Experience', icon: AlertCircle, color: 'text-yellow-500' },
                 { label: 'Weak summary wording', icon: AlertCircle, color: 'text-red-500' },
               ].map((item, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
