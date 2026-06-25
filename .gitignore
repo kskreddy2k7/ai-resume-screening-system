@@ -19,8 +19,8 @@ dist-electron
 *.local
 
 # Large media files
-public/demo.mp4
-*.mp4
+# public/demo.mp4
+# *.mp4
 *.mp3
 *.mov
 *.avi
