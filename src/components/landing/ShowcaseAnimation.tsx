@@ -91,7 +91,7 @@ export default function ShowcaseAnimation() {
       <div className="container mx-auto px-4 h-full flex items-center justify-between relative max-w-7xl">
         
         {/* ================= LEFT SIDE ANIMATED PANEL ================= */}
-        <div className="w-[30%] h-[70%] flex flex-col justify-center items-start relative z-10">
+        <div className="hidden xl:flex w-[30%] h-[70%] flex-col justify-center items-start relative z-10">
           <AnimatePresence mode="wait">
             
             {/* SCENE 1 & 2: Resume Scanning */}
@@ -351,10 +351,10 @@ export default function ShowcaseAnimation() {
         </div>
 
         {/* CENTER GAP FOR HEADLINE (Centered text stays 100% readable) */}
-        <div className="w-[35%] h-full pointer-events-none" />
+        <div className="hidden xl:block w-[35%] h-full pointer-events-none" />
 
         {/* ================= RIGHT SIDE ANIMATED PANEL ================= */}
-        <div className="w-[30%] h-[70%] flex flex-col justify-center items-end relative z-10">
+        <div className="hidden xl:flex w-[30%] h-[70%] flex-col justify-center items-end relative z-10">
           <AnimatePresence mode="wait">
             
             {/* SCENE 1: Background Decoration */}
@@ -548,7 +548,7 @@ export default function ShowcaseAnimation() {
       </div>
 
       {/* Visual Timeline Indicators at the bottom */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
+      <div className="hidden xl:flex absolute bottom-8 left-1/2 -translate-x-1/2 gap-2.5 z-20">
         {[1, 2, 3, 4, 5, 6, 7].map((num) => (
           <button 
             key={num}
