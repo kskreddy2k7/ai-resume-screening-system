@@ -1,66 +1,201 @@
-# TalentFlow AI v3
+# 🚀 TalentFlow AI
 
-Create, Edit, Analyze, Optimize and Export Professional Resumes Using AI.
+> Build, Analyze, Optimize, and Export Professional Resumes with AI.
 
-## Overview
+TalentFlow AI is a modern AI-powered resume platform designed to help students, job seekers, and professionals create ATS-friendly resumes, improve resume quality, analyze job compatibility, and export professional resumes with an intuitive Canva-style editing experience.
 
-TalentFlow AI is a rebuilt resume SaaS platform with:
+---
 
-- Public product site (`/`, `/features`, `/pricing`, `/templates`, `/login`, `/register`)
-- Private app workspace (`/app`) with dashboard, builder, analyzer, ATS scanner, job match, templates, library, profile, and settings
-- Canva-style resume editing controls (inline editing, drag reorder, style controls, zoom, undo/redo, autosave)
-- Resume import flow (PDF/DOCX/TXT text extraction strategy)
-- ATS analysis engine and AI-style suggestion application
-- Job description matcher with keyword density and missing skills
-- Resume library with duplicate/rename/delete, version history and restore
-- Print-ready PDF export (A4-oriented browser print flow)
+## ✨ Features
 
-## Tech Stack
+### 📝 Smart Resume Builder
+- Interactive drag-and-drop resume editor
+- Real-time inline editing
+- Professional resume templates
+- Automatic formatting
+- Zoom controls
+- Undo & Redo
+- Autosave
 
-- React + TypeScript + Vite
-- Tailwind CSS
-- Framer Motion
-- React Router
-- Lucide React
-- React Hook Form
-- Zustand (persisted local state)
+### 🤖 AI Resume Analysis
+- Resume quality analysis
+- ATS compatibility score
+- Resume improvement suggestions
+- Content optimization
+- Section analysis
+- Keyword recommendations
 
-## Project Structure
+### 🎯 Job Match Analyzer
+- Compare resumes against job descriptions
+- Missing skills detection
+- Keyword density analysis
+- Match score calculation
+- Personalized improvement suggestions
+
+### 📂 Resume Management
+- Resume library
+- Duplicate resumes
+- Rename projects
+- Delete resumes
+- Version history
+- Restore previous versions
+
+### 📄 Resume Import & Export
+- Import PDF
+- Import DOCX
+- Import TXT
+- High-quality PDF export
+- Print-ready A4 layout
+
+### 👤 User Workspace
+- Personal Dashboard
+- Profile Management
+- Resume Analytics
+- Settings
+- Resume Templates
+- Saved Projects
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technologies |
+|-----------|-------------|
+| Frontend | React, TypeScript, Vite |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Routing | React Router |
+| Forms | React Hook Form |
+| State Management | Zustand |
+| Icons | Lucide React |
+| Storage | Browser Local Storage |
+
+---
+
+# 📂 Project Structure
 
 ```text
 src/
-  components/
-    common/
-    layout/
-  lib/
-    analysis.ts
-    defaults.ts
-    importer.ts
-  pages/
-    public/
-    app/
-  store/
-    usePlatformStore.ts
-  types/
-    resume.ts
+│
+├── components/
+│   ├── common/
+│   ├── editor/
+│   ├── layout/
+│   └── ui/
+│
+├── pages/
+│   ├── public/
+│   └── app/
+│
+├── lib/
+│   ├── analysis.ts
+│   ├── importer.ts
+│   └── defaults.ts
+│
+├── store/
+│   └── usePlatformStore.ts
+│
+├── types/
+│   └── resume.ts
+│
+└── assets/
 ```
 
-## Local Development
+---
+
+# ⚡ Core Modules
+
+- AI Resume Analyzer
+- ATS Scanner
+- Resume Builder
+- Job Match Engine
+- Resume Import
+- Resume Export
+- Resume Library
+- Version History
+- User Dashboard
+
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
+
+```bash
+git clone https://github.com/kskreddy2k7/ai-resume-screening-system.git
+```
+
+## Install Dependencies
 
 ```bash
 npm install
+```
+
+## Start Development
+
+```bash
 npm run dev
 ```
 
-## Validation
+## Build Production
 
 ```bash
-npm run lint
 npm run build
 ```
 
-## Notes
+## Lint Project
 
-- App state persists in browser storage via Zustand.
-- PDF export uses `window.print()` for high-fidelity export from the current resume canvas.
-- The import parser is intentionally lightweight and designed for iterative enhancement with backend OCR/NLP services.
+```bash
+npm run lint
+```
+
+---
+
+# 📊 Highlights
+
+- Modern SaaS Architecture
+- Responsive Design
+- ATS Resume Optimization
+- AI-Based Resume Suggestions
+- Canva-Style Resume Editor
+- High Performance
+- TypeScript Codebase
+- Mobile Friendly
+- Fast Build with Vite
+
+---
+
+# 🎯 Future Enhancements
+
+- OpenAI / Gemini Integration
+- Cloud Storage
+- User Authentication
+- Resume Sharing
+- Team Collaboration
+- Multi-language Support
+- AI Cover Letter Generator
+- Interview Preparation Assistant
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Kata Sai Kranthu Reddy**
+
+- AI & Machine Learning Student
+- Frontend Developer
+- AI Application Developer
+
+GitHub: https://github.com/kskreddy2k7
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
